@@ -22,7 +22,7 @@ const Hero = () => {
                     variants={container(0)}
                     initial="hidden"
                     animate="visible"
-                    className="pb-16 text-4xl font-thin tracking-tight lg:mt-10 lg:text-7xl"
+                    className="pb-16 text-4xl font-thin tracking-tight lg:mt-10 lg:text-6xl"
                 >
                     Sivasanjeev S
                 </motion.h1>
