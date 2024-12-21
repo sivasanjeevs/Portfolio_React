@@ -30,17 +30,17 @@ const Poster = () => {
   ];
 
   const settings = {
-    dots: true,
     infinite: true,
-    speed: 3000,  // Adjust the transition speed for smooth movement
+    pauseOnHover: false,
+    speed: 2000,
     slidesToShow: 3, 
     slidesToScroll: 1,
     centerMode: true,
     centerPadding: '0', 
     focusOnSelect: false,
-    autoplay: true, // Enable auto scroll
-    autoplaySpeed: 0, // No delay between transitions for continuous movement
-    cssEase: 'linear', // Smooth continuous transition
+    autoplay: true, 
+    autoplaySpeed: 1000, 
+    cssEase: 'ease-in-out',
     responsive: [
       {
         breakpoint: 1024,
@@ -66,13 +66,13 @@ const Poster = () => {
       initial={{ opacity: 0, y: -100 }}
       transition={{ duration: 1.5 }}
 
-      className="my-20 text-center text-4xl text-white">Posters</motion.h1>
+      className="my-20 text-center text-4xl text-white">Posters Designs</motion.h1>
       <div className="w-3/4 m-auto">
         <div className="mt-20">
           <Slider {...settings}>
             {data.map((d, index) => (
               <div key={index} className="mx-6">
-                <img className="h-64 w-64 object-contain" src={d.img} alt="" />
+                <img className="h-64 w-64 object-contain  drop-shadow-2xl" src={d.img} alt="" />
               </div>
             ))}
           </Slider>

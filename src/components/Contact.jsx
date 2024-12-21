@@ -1,5 +1,6 @@
 import { CONTACT } from '../constants';
 
+
 const Contact = () => {
   return (
     <div className='border-bb border-neutral-900 pb-20'>
