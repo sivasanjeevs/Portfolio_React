@@ -26,7 +26,7 @@ const Pro = () => {
          whileInView={{ opacity: 1, y: 0 }}
          initial={{ opacity: 0, y: -100 }}
          transition={{ duration: 3 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
+          className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
 
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
@@ -46,7 +46,7 @@ const Pro = () => {
           </CardFooter>
         </div>
 
-        <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
+       {/* <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
             <Typography variant="h5" color="white" className="mb-2">
               CinePix
@@ -62,7 +62,7 @@ const Pro = () => {
              Link!
             </Button>
           </CardFooter>
-        </div>
+        </div>*/}
 
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
@@ -71,6 +71,23 @@ const Pro = () => {
             </Typography>
             <Typography>
             A console-based car rental system built in C++, featuring separate authentication for admin and users. It allows admins to manage car listings, while users can rent cars and view available options.
+            </Typography>
+          </CardBody>
+          <CardFooter className="pt-0 text-center">
+            <Button
+              className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
+            >
+              Link!
+            </Button>
+          </CardFooter>
+        </div>
+        <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
+          <CardBody>
+            <Typography variant="h5" color="white" className="mb-2">
+              HealthCare Diagnostics and Drug discovery
+            </Typography>
+            <Typography>
+            Developed a healthcare project using Python for disease prediction via decision trees, image segmentation with k-means clustering, and drug efficiency prediction using logistic regression.
             </Typography>
           </CardBody>
           <CardFooter className="pt-0 text-center">
