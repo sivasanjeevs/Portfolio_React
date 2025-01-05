@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef } from 'react'
-import bg from "../assets/back6.jpg";
+import bg from "../assets/back6.png";
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 gsap.registerPlugin(ScrollTrigger); 
@@ -46,12 +46,12 @@ const parl = () => {
             <div ref={img_container} className="img-container perspective flex items-center justify-center h-screen w-screen">
                 <img ref={img} className='image' src={bg} alt=''/>
             
-               {/* <div ref={text1} className='absolute flex flex-col items-center justify-center'>
+               <div ref={text1} className='absolute flex flex-col items-center justify-center'>
                     <h1  className='text-[170px] '>
-                        <span className="text-stroke"></span>
+                        <span className="font-thin tracking-tight">hello!</span>
                     </h1>
                     <p className='opacity-50 w-48 text-[13px] text-center'></p>
-                </div>*/}
+                </div>
             </div>
     </div>
     </>

@@ -15,11 +15,6 @@
         -webkit-mask-repeat: no-repeat; 
         height: 100%;
     }
-    .text-stroke{
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke-color: white ;
-        -webkit-text-stroke-width:  2px; 
-    }
     .perspective{
         perspective: 2200px;
     }
