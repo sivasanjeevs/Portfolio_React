@@ -19,25 +19,25 @@ const Hero = () => {
         <div className="w-full lg:w-1/2">
             <div className="flex flex-col  items-center lg:items-start">
                 <motion.h1 
-                    variants={container(0)}
-                    initial="hidden"
-                    animate="visible"
+            whileInView={{opacity: 1, x: 0}}
+            initial={{ opacity: 0, x: -100}}
+            transition={{duration: 1}}
                     className="pb-16 text-4xl font-thin tracking-tight lg:mt-10 lg:text-6xl"
                 >
                     Sivasanjeev S
                 </motion.h1>
                 <motion.span 
-                    variants={container(0.5)}
-                    initial="hidden"
-                    animate="visible"
+            whileInView={{opacity: 1, x: 0}}
+            initial={{ opacity: 0, x: -100}}
+            transition={{duration: 1}}
                     className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-4xl tracking-tight text-transparent"
                 >
                     Student at PSG
                 </motion.span>
                 <motion.p 
-                    variants={container(1)}
-                    initial="hidden"
-                    animate="visible"
+            whileInView={{opacity: 1, x: 0}}
+            initial={{ opacity: 0, x: -100}}
+            transition={{duration: 1}}
                     className="my-2 max-w-xl py-6 font-light tracking tighter"
                 >
                     {HERO_CONTENT}
@@ -46,9 +46,9 @@ const Hero = () => {
         </div>
         <div className="w-full flex justify-center lg:justify-end">
             <motion.img 
-                initial={{ x: 100, opacity: 0 }}
-                animate={{ x: 50, opacity: 1 }}
-                transition={{ duration: 1, delay: 1.2 }}
+                                whileInView={{opacity: 1, x: 50}}
+                                initial={{opacity:0, x:100}}
+                                transition={{duration:1}}
                 className="flex items-center justify-center"
                 src={profilepic} 
                 alt="sivasanjeev"

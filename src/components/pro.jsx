@@ -23,9 +23,9 @@ const Pro = () => {
        Academic Projects
       </motion.h1>
       <motion.div
-         whileInView={{ opacity: 1, y: 0 }}
-         initial={{ opacity: 0, y: -100 }}
-         transition={{ duration: 3 }}
+             whileInView={{opacity: 1, x: 0}}
+             initial={{opacity: 0, x: -100}}
+             transition={{duration: 1}}
           className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10">
 
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
@@ -108,9 +108,9 @@ const Pro = () => {
        Non - Academic Projects
       </motion.h1>
         <motion.div
-           whileInView={{ opacity: 1, y: 0 }}
-           initial={{ opacity: 0, y: -100 }}
-           transition={{ duration: 3 }}
+            whileInView={{opacity: 1, x: 0}}
+            initial={{opacity: 0, x: 100}}
+            transition={{duration: 1}}
             className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10'>
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>

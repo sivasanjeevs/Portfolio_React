@@ -78,6 +78,7 @@ const Poster = () => {
           </Slider>
         </div>
       </div>
+      
     </div>
   );
 };
