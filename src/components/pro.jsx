@@ -18,7 +18,7 @@ const Pro = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1.5 }}
-        className="my-20 text-center text-4xl text-white"
+        className=" my-20 text-center text-4xl text-white"
       >
        Academic Projects
       </motion.h1>
@@ -30,7 +30,7 @@ const Pro = () => {
 
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
-            <Typography variant="h5" color="white" className="mb-2">
+            <Typography variant="h5" color="white" className="mb-4">
               Simple Remote Desktop
             </Typography>
             <Typography>
@@ -39,6 +39,7 @@ const Pro = () => {
           </CardBody>
           <CardFooter className="pt-0 text-center">
             <Button
+              onClick={() => window.open("https://github.com/sivasanjeevs/remote-Desktop", "_blank")}
               className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
             >
               Link!
@@ -66,7 +67,7 @@ const Pro = () => {
 
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
-            <Typography variant="h5" color="white" className="mb-2">
+            <Typography variant="h5" color="white" className="mb-4">
               Car Rental System
             </Typography>
             <Typography>
@@ -75,6 +76,7 @@ const Pro = () => {
           </CardBody>
           <CardFooter className="pt-0 text-center">
             <Button
+              onClick={() => window.open("https://github.com/sivasanjeevs/car-rental-system", "_blank")}
               className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
             >
               Link!
@@ -83,7 +85,7 @@ const Pro = () => {
         </div>
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
-            <Typography variant="h5" color="white" className="mb-2">
+            <Typography variant="h5" color="white" className="mb-4">
               HealthCare Diagnostics and Drug discovery
             </Typography>
             <Typography>
@@ -103,7 +105,7 @@ const Pro = () => {
         whileInView={{ opacity: 1, y: 0 }}
         initial={{ opacity: 0, y: -100 }}
         transition={{ duration: 1.5 }}
-        className="my-20 text-center text-4xl text-white"
+        className=" my-20 text-center text-4xl text-white"
       >
        Non - Academic Projects
       </motion.h1>
@@ -114,7 +116,7 @@ const Pro = () => {
             className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10'>
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
-            <Typography variant="h5" color="white" className="mb-2">
+            <Typography variant="h5" color="white" className="mb-4">
               Twitter Clone
             </Typography>
             <Typography>
@@ -123,6 +125,7 @@ const Pro = () => {
           </CardBody>
           <CardFooter className="pt-0 text-center">
             <Button
+              onClick={() => window.open("https://github.com/Yuvaneshwarran/Twitter-Clone", "_blank")}
               className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
             >
               Link!
@@ -132,7 +135,7 @@ const Pro = () => {
 
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
-            <Typography variant="h5" color="white" className="mb-2">
+            <Typography variant="h5" color="white" className="mb-4">
               Spotify Clone
             </Typography>
             <Typography>
@@ -141,6 +144,7 @@ const Pro = () => {
           </CardBody>
           <CardFooter className="pt-0 text-center">
             <Button
+              onClick={() => window.open("https://github.com/sivasanjeevs/Spotify_Clone_Backend", "_blank")}
               className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
             >
              Link!
@@ -150,7 +154,7 @@ const Pro = () => {
 
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
-            <Typography variant="h5" color="white" className="mb-2">
+            <Typography variant="h5" color="white" className="mb-4">
               Portfolio
             </Typography>
             <Typography>
@@ -159,6 +163,7 @@ const Pro = () => {
           </CardBody>
           <CardFooter className="pt-0 text-center">
             <Button
+              onClick={() => window.open("https://github.com/sivasanjeevs/Portfolio_React", "_blank")}
               className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
             >
              Link!

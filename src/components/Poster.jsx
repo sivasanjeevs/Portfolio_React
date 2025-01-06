@@ -66,7 +66,7 @@ const Poster = () => {
       initial={{ opacity: 0, y: -100 }}
       transition={{ duration: 1.5 }}
 
-      className="my-20 text-center text-4xl text-white">Posters Designs</motion.h1>
+      className="my-20 text-center text-4xl text-white ">Posters Designs</motion.h1>
       <div className="w-3/4 m-auto">
         <div className="mt-20">
           <Slider {...settings}>

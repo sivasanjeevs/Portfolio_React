@@ -30,7 +30,7 @@ const parl = () => {
                 }
             })
             .to(img.current, { transform: "translateZ(2200px)" })
-            .to(text1.current, { y: -800 });            
+            .to(text1.current, { y: -800, ease: "power1.out"});            
         })
 
 
@@ -47,10 +47,9 @@ const parl = () => {
                 <img ref={img} className='image' src={bg} alt=''/>
             
                <div ref={text1} className='absolute flex flex-col items-center justify-center'>
-                    <h1  className='text-[170px] '>
-                        <span className="font-thin tracking-tight">hello!</span>
+                    <h1  className='text-[100px] justify-center text-center '>
+                        <span className="font-thin tracking-tight"> Code. Design. Create. </span>
                     </h1>
-                    <p className='opacity-50 w-48 text-[13px] text-center'></p>
                 </div>
             </div>
     </div>
