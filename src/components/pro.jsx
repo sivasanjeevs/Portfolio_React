@@ -117,10 +117,10 @@ const Pro = () => {
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
             <Typography variant="h5" color="white" className="mb-4">
-              Twitter Clone
+              X Clone
             </Typography>
             <Typography>
-            A Twitter clone built using the MERN stack, replicating core features like user authentication, real-time tweets, and social interactions. Users can post, like, and comment on tweets..
+            A X clone built using the MERN stack, replicating core features like user authentication, real-time tweets, and social interactions. Users can post, like, and comment on tweets..
             </Typography>
           </CardBody>
           <CardFooter className="pt-0 text-center">
