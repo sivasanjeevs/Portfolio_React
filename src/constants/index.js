@@ -6,7 +6,7 @@ import { FaClapperboard } from "react-icons/fa6";
 import { FaGlobe } from "react-icons/fa";
 
 
-export const HERO_CONTENT = `I am passionate about web development, software development, and UI/UX design. I aspire to become a skilled full-stack developer and strive to create comprehensive and efficient solutions. My focus is on building user-centric applications that combine robust functionality with intuitive design.`;
+export const HERO_CONTENT = `I'm passionate about web development, software development, and UI/UX design. I aspire to become a skilled full-stack developer and focus on creating applications that are both functional and easy to use. My goal is to build user-centric experiences that bring together powerful features with simple, intuitive design.`;
 
 export const ABOUT_TEXT = `Hi, I'm Sivasanjeev, a Theoretical Computer Science student at PSG College of Technology with a passion for software development, full-stack web development, and UI/UX design. I work with technologies like C, C++, Python, R, Java, HTML, CSS, JavaScript, React, and MySQL to build efficient applications and user-friendly web solutions.
 

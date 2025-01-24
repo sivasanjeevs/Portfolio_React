@@ -94,6 +94,7 @@ const Pro = () => {
           </CardBody>
           <CardFooter className="pt-0 text-center">
             <Button
+               onClick={() => window.open("https://github.com/sivasanjeevs/HealthCare-Diagnostics-and-Drug-discovery", "_blank")}
               className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
             >
               Link!
