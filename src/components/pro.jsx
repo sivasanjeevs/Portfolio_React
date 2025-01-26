@@ -126,7 +126,7 @@ const Pro = () => {
           </CardBody>
           <CardFooter className="pt-0 text-center">
             <Button
-              onClick={() => window.open("https://github.com/Yuvaneshwarran/Twitter-Clone", "_blank")}
+              onClick={() => window.open("https://github.com/sivasanjeevs/X_Clone", "_blank")}
               className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
             >
               Link!
