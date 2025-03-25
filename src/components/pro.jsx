@@ -68,15 +68,15 @@ const Pro = () => {
         <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
           <CardBody>
             <Typography variant="h5" color="white" className="mb-4">
-              Car Rental System
+              2048 Ai
             </Typography>
             <Typography>
-            A console-based car rental system built in C++, featuring separate authentication for admin and users. It allows admins to manage car listings, while users can rent cars and view available options.
+            Developed a 2048 game using React, Express.js, and Tailwind CSS, allowing both manual play and AI-assisted moves. Implemented the Expectimax algorithm to determine the best possible move.
             </Typography>
           </CardBody>
           <CardFooter className="pt-0 text-center">
             <Button
-              onClick={() => window.open("https://github.com/sivasanjeevs/car-rental-system", "_blank")}
+              onClick={() => window.open("https://github.com/sivasanjeevs/2048-Ai", "_blank")}
               className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
             >
               Link!
