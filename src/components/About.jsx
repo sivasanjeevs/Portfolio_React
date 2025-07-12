@@ -29,12 +29,12 @@ const About = () => {
                                 whileInView={{opacity: 1, x: 0}}
                                 initial={{opacity:0, x:100}}
                                 transition={{duration:1}}
-                                className="my-2 max-w-xl py-6">Hi, I’m Sivasanjeev, a Theoretical Computer Science student at PSG College of Technology. I’m passionate about building digital experiences that feel smooth and intuitive. With a focus on full-stack web development and UI/UX design, I love combining technical skills with creativity to bring ideas to life and create projects that truly connect with users.</motion.p>
+                                className="my-2 max-w-xl py-6">Hi, I’m Sivasanjeev, a Theoretical Computer Science student at PSG College of Technology, passionate about building seamless digital experiences. With a strong focus on full-stack web development, I enjoy turning ideas into intuitive, user-focused products by combining solid programming skills with creative problem-solving. I’m currently working as an R&D intern, where I explore Multi-Agent Path Finding (MAPF) algorithms and dive deep into the design and analysis of algorithms to solve complex coordination challenges efficiently.</motion.p>
                     <motion.p 
                                 whileInView={{opacity: 1, x: 0}}
                                 initial={{opacity:0, x:100}}
                                 transition={{duration:1}}
-                                className="my-2 max-w-xl py-6">Beyond coding, I express my creativity through visual design, crafting posters, logos, and event assets that have been proudly featured in various college initiatives.My designs focus on creating meaningful experiences by combining functionality with creativity and a keen eye for aesthetics.</motion.p>
+                                className="my-2 max-w-xl py-6">Beyond software development, I express my creativity through design, having created logos, posters, and event branding materials featured in various college initiatives. My design work focuses on blending functionality with visual appeal to communicate ideas effectively. Whether I’m working with algorithms or visual elements, I strive to deliver thoughtful, high-impact solutions that resonate with users.</motion.p>
                     <motion.p 
                                 whileInView={{opacity: 1, x: 0}}
                                 initial={{opacity:0, x:100}}
