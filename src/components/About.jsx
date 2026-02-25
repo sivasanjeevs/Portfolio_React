@@ -16,32 +16,49 @@ const About = () => {
             whileInView={{opacity: 1, x: -50}}
             initial={{ opacity: 0, x: -100}}
             transition={{duration: 1}}
-            className="w-full mx-0 lg:w-1/2">
-               <div className="flex items-center justify-center">
+            className="hidden mx-0 lg:flex lg:w-1/2 items-center justify-start">
+               <div className="flex items-center">
                     <img  className="" src={aboutImg} alt="about" />
                 </div>
             </motion.div>
-            <div 
+            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
+              <div className="max-w-xl px-4">
+                <motion.p 
+                  whileInView={{opacity: 1, x: 0}}
+                  initial={{opacity:0, x:100}}
+                  transition={{duration:1}}
+                  className="my-2 py-2 text-sm md:text-base"
+                >
+                  Hi, I’m <span className="font-semibold">Sivasanjeev</span>, a Theoretical Computer Science student at PSG College of Technology, interested in designing and building clear, user‑focused digital experiences. I enjoy working at the intersection of algorithms and full‑stack web development, using solid theoretical foundations to solve practical problems.
+                </motion.p>
 
-            className="w-full lg:w-1/2">
-                <div className=" justify-center lg:justify-start">
-                    <motion.p 
-                                whileInView={{opacity: 1, x: 0}}
-                                initial={{opacity:0, x:100}}
-                                transition={{duration:1}}
-                                className="my-2 max-w-xl py-6">Hi, I’m Sivasanjeev, a Theoretical Computer Science student at PSG College of Technology, passionate about building seamless digital experiences. With a strong focus on full-stack web development, I enjoy turning ideas into intuitive, user-focused products by combining solid programming skills with creative problem-solving. I’m currently working as an R&D intern, where I explore Multi-Agent Path Finding (MAPF) algorithms and dive deep into the design and analysis of algorithms to solve complex coordination challenges efficiently.</motion.p>
-                    <motion.p 
-                                whileInView={{opacity: 1, x: 0}}
-                                initial={{opacity:0, x:100}}
-                                transition={{duration:1}}
-                                className="my-2 max-w-xl py-6">Beyond software development, I express my creativity through design, having created logos, posters, and event branding materials featured in various college initiatives. My design work focuses on blending functionality with visual appeal to communicate ideas effectively. Whether I’m working with algorithms or visual elements, I strive to deliver thoughtful, high-impact solutions that resonate with users.</motion.p>
-                    <motion.p 
-                                whileInView={{opacity: 1, x: 0}}
-                                initial={{opacity:0, x:100}}
-                                transition={{duration:1}}
-                                className="my-2 max-w-xl py-6">Hobbies : Singing, Drawing, Designing</motion.p>
-                                
-                </div>
+                <motion.p 
+                  whileInView={{opacity: 1, x: 0}}
+                  initial={{opacity:0, x:100}}
+                  transition={{duration:1}}
+                  className="my-2 py-2 text-sm md:text-base text-neutral-300"
+                >
+                  I completed a Research &amp; Development internship at Goat Robotics, where I contributed to tools for robotics map editing, visualization, and performance analysis, and worked with multi‑agent path finding and navigation concepts for coordinated robot fleets.
+                </motion.p>
+
+                <motion.p 
+                  whileInView={{opacity: 1, x: 0}}
+                  initial={{opacity:0, x:100}}
+                  transition={{duration:1}}
+                  className="my-2 py-2 text-sm md:text-base text-neutral-300"
+                >
+                  Outside of academics and development, I spend time on visual design, including logos, posters, and event branding for college initiatives, with an emphasis on clean, functional visuals.
+                </motion.p>
+
+                <motion.p 
+                  whileInView={{opacity: 1, x: 0}}
+                  initial={{opacity:0, x:100}}
+                  transition={{duration:1}}
+                  className="my-2 py-2 text-sm md:text-base text-neutral-300"
+                >
+                  I also pursue creative interests like singing and drawing, which help me bring a more balanced and thoughtful perspective to the work I do.
+                </motion.p>
+              </div>
             </div>
         </div>
 
