@@ -3,10 +3,6 @@ import { motion } from "framer-motion";
 
 const Hero = () => {
   const handleScroll = (sectionId) => {
-    if (sectionId === "Blog") {
-      window.open("https://example.com/your-Blog.pdf", "_blank");
-      return;
-    }
     const el = document.getElementById(sectionId);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -51,7 +47,7 @@ const Hero = () => {
         {[
           { id: "about", label: "About" },
           { id: "experience", label: "Experience" },
-          { id: "Blog", label: "Blog" },
+          { id: "blog", label: "Blog" },
           { id: "projects", label: "Projects" },
           // { id: "designs", label: "Designs" },
         ].map(({ id, label }) => (
