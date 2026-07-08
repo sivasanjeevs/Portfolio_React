@@ -1,5 +1,3 @@
-import React from 'react'
-import { CardBody, Typography, Button } from "@material-tailwind/react";
 import { motion } from "framer-motion";
 import remoteDesktopImg from "../assets/remote desktop.png";
 import ai2048Img from "../assets/2048.png";
@@ -7,180 +5,126 @@ import healthcareImg from "../assets/drug.png";
 import roboImg from "../assets/robo.png";
 import xcloneImg from "../assets/xclone.png";
 import spotifyImg from "../assets/spotifyclone.png";
+import SectionHeader from "./SectionHeader";
 
-const container = (delay) => ({
-  hidden: { x: -100, opacity: 0 },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: { duration: 0.5, delay: delay },
+const PROJECTS = [
+  {
+    title: "Remote Desktop",
+    description:
+      "A remote desktop application built with Python socket programming and Tkinter, allowing users to access and control a remote system effortlessly.",
+    image: remoteDesktopImg,
+    url: "https://github.com/sivasanjeevs/remote-Desktop",
   },
-});
+  {
+    title: "Implicit Dehazing in Feature Space",
+    description:
+      "A research project proposing a novel single-stage semantic segmentation architecture that performs implicit dehazing in latent feature space, enabling faster and more accurate autonomous vehicle perception under foggy conditions.",
+    image: remoteDesktopImg,
+    url: "https://github.com/sivasanjeevs/Implicit-Dehazing-in-Feature-Space",
+  },
+  {
+    title: "CORES",
+    description:
+      "Anomaly detection framework leveraging recursive kernel backtracking to extract extreme convolutional responses and synthetic noise calibration to evaluate deep neural network safety across image datasets via AUROC and FPR96 metrics.",
+    image: healthcareImg,
+    url: "https://github.com/sivasanjeevs/CORES",
+  },
+  {
+    title: "ThreadNet",
+    description:
+      "A multi-threaded, load-balanced real-time chat platform featuring a C++ TCP backend, a Node.js WebSocket bridge, and web user/admin interfaces. It uses a custom load balancer to distribute users across multiple chat servers via a round-robin approach based on server load.",
+    image: xcloneImg,
+    url: "https://github.com/sivasanjeevs/ThreadNet",
+  },
+  {
+    title: "HealthCare Diagnostics",
+    description:
+      "Healthcare project using Python for disease prediction via decision trees, image segmentation with k-means, and drug efficiency prediction.",
+    image: healthcareImg,
+    url: "https://github.com/sivasanjeevs/HealthCare-Diagnostics-and-Drug-discovery",
+  },
+  {
+    title: "RoboRoute",
+    description:
+      "Fleet Management System coordinating multiple robots with real-time visualization, traffic negotiation, and A* path planning via Python and Pygame.",
+    image: roboImg,
+    url: "https://github.com/sivasanjeevs/RoboRoute",
+  },
+  {
+    title: "X Clone",
+    description:
+      "Feature-rich Twitter clone using the MERN stack with real-time updates via Socket.io, authentication, and responsive design.",
+    image: xcloneImg,
+    url: "https://github.com/sivasanjeevs/X_Clone",
+  },
+  {
+    title: "Spotify Clone",
+    description:
+      "Spotify clone using the MERN stack with music streaming, playlist management, and user authentication.",
+    image: spotifyImg,
+    url: "https://github.com/sivasanjeevs/Spotify_Clone_Frontend",
+  },
+];
 
 const Pro = () => {
   return (
-    <div className="border-b border-neutral-800 pb-40">
-      <motion.h1
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 1.5 }}
-        className=" my-20 text-center text-4xl text-white"
-      >
-       Projects
-      </motion.h1>
-      <motion.div
-        whileInView={{ opacity: 1, x: 0 }}
-        initial={{ opacity: 0, x: -100 }}
-        transition={{ duration: 1 }}
-        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10"
-      >
+    <section className="section-padding border-t border-apple-border">
+      <div className="section-container">
+        <SectionHeader
+          eyebrow="Projects"
+          title="Things I've built."
+          subtitle="From algorithms to full-stack apps — selected work across robotics, AI, and web development."
+        />
 
-        <div
-          onClick={() => window.open("https://github.com/sivasanjeevs/remote-Desktop", "_blank")}
-          className="relative mt-6 w-full rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900/80 via-neutral-900/60 to-neutral-800/80 p-6 text-white shadow-[0_0_40px_rgba(24,24,27,0.9)] overflow-hidden transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(34,211,238,0.6)] cursor-pointer"
-        >
-          <img
-            src={remoteDesktopImg}
-            alt="Remote Desktop"
-            className="w-full h-40 object-cover rounded-2xl mb-4"
-          />
-          <CardBody className="p-0">
-            <Typography variant="h5" color="white" className="mb-4">
-              Remote Desktop
-            </Typography>
-            <Typography>
-              A remote desktop application created with Python’s socket programming and Tkinter for GUI, allowing users to access and control a remote system effortlessly.
-            </Typography>
-          </CardBody>
-        </div>
-
-       {/* <div className="relative mt-6 w-full rounded-2xl p-6 bg-gradient-to-br from-black to-gray-800 shadow-lg text-white overflow-hidden transform transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-none">
-          <CardBody>
-            <Typography variant="h5" color="white" className="mb-2">
-              CinePix
-            </Typography>
-            <Typography>
-            A movie recommendation system built using the Trie data structure in JavaScript, functioning like a dictionary to suggest movies based on user input. The UI is designed using HTML and CSS.
-            </Typography>
-          </CardBody>
-          <CardFooter className="pt-0 text-center">
-            <Button
-              className="mt-4 bg-gradient-to-r from-blue-700 to-purple-600 text-white rounded-md px-4 py-2 hover:from-blue-800 hover:to-purple-700 focus:ring-4 focus:ring-blue-500 focus:ring-opacity-50 active:shadow-md active:shadow-blue-500/50"
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {PROJECTS.map((project, i) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
+              onClick={() => window.open(project.url, "_blank")}
+              className="apple-card group cursor-pointer overflow-hidden"
             >
-             Link!
-            </Button>
-          </CardFooter>
-        </div>*/}
+              <div className="overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="h-48 w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <div className="p-6">
+                <h3 className="text-lg font-semibold text-apple-text">
+                  {project.title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-apple-muted line-clamp-3">
+                  {project.description}
+                </p>
+                <span className="mt-4 inline-block text-sm font-medium text-apple-blue opacity-0 transition-opacity group-hover:opacity-100">
+                  View on GitHub →
+                </span>
+              </div>
+            </motion.div>
+          ))}
+        </div>
 
-        <div
-          onClick={() => window.open("https://github.com/sivasanjeevs/2048-Ai", "_blank")}
-          className="relative mt-6 w-full rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900/80 via-neutral-900/60 to-neutral-800/80 p-6 text-white shadow-[0_0_40px_rgba(24,24,27,0.9)] overflow-hidden transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(34,211,238,0.6)] cursor-pointer"
-        >
-          <img
-            src={ai2048Img}
-            alt="2048 AI"
-            className="w-full h-40 object-cover rounded-2xl mb-4"
-          />
-          <CardBody className="p-0">
-            <Typography variant="h5" color="white" className="mb-4">
-              2048 Ai
-            </Typography>
-            <Typography>
-              Developed a 2048 game using React, Express.js, and Tailwind CSS, allowing both manual play and AI-assisted moves. Implemented the Expectimax algorithm to determine the best possible move.
-            </Typography>
-          </CardBody>
-        </div>
-        <div
-          onClick={() => window.open("https://github.com/sivasanjeevs/HealthCare-Diagnostics-and-Drug-discovery", "_blank")}
-          className="relative mt-6 w-full rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900/80 via-neutral-900/60 to-neutral-800/80 p-6 text-white shadow-[0_0_40px_rgba(24,24,27,0.9)] overflow-hidden transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(34,211,238,0.6)] cursor-pointer"
-        >
-          <img
-            src={healthcareImg}
-            alt="HealthCare Diagnostics and Drug discovery"
-            className="w-full h-40 object-cover rounded-2xl mb-4"
-          />
-          <CardBody className="p-0">
-            <Typography variant="h5" color="white" className="mb-4">
-              HealthCare Diagnostics and Drug discovery
-            </Typography>
-            <Typography>
-              Developed a healthcare project using Python for disease prediction via decision trees, image segmentation with k-means clustering, and drug efficiency prediction using logistic regression.
-            </Typography>
-          </CardBody>
-        </div>
-        </motion.div>
         <motion.div
-          whileInView={{ opacity: 1, x: 0 }}
-          initial={{ opacity: 0, x: 100 }}
-          transition={{ duration: 1 }}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-10"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mt-16 flex justify-center"
         >
-        <div
-          onClick={() => window.open("https://github.com/sivasanjeevs/RoboRoute", "_blank")}
-          className="relative mt-6 w-full rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900/80 via-neutral-900/60 to-neutral-800/80 p-6 text-white shadow-[0_0_40px_rgba(24,24,27,0.9)] overflow-hidden transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(34,211,238,0.6)] cursor-pointer"
-        >
-          <img
-            src={roboImg}
-            alt="RoboRoute Fleet Management System"
-            className="w-full h-40 object-cover rounded-2xl mb-4"
-          />
-          <CardBody className="p-0">
-            <Typography variant="h5" color="white" className="mb-4">
-              RoboRoute
-            </Typography>
-            <Typography>
-              Developed a Fleet Management System to coordinate multiple robots in a shared environment, featuring real-time visualization, traffic negotiation, and collision avoidance through an interactive GUI built using Python and Pygame, with A* algorithm implemented for efficient path planning.
-            </Typography>
-          </CardBody>
-        </div>
-
-        <div
-          onClick={() => window.open("https://github.com/sivasanjeevs/X_Clone", "_blank")}
-          className="relative mt-6 w-full rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900/80 via-neutral-900/60 to-neutral-800/80 p-6 text-white shadow-[0_0_40px_rgba(24,24,27,0.9)] overflow-hidden transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(34,211,238,0.6)] cursor-pointer"
-        >
-          <img
-            src={xcloneImg}
-            alt="X Clone"
-            className="w-full h-40 object-cover rounded-2xl mb-4"
-          />
-          <CardBody className="p-0">
-            <Typography variant="h5" color="white" className="mb-4">
-              X Clone
-            </Typography>
-            <Typography>
-              Developed a feature-rich Twitter clone using the MERN stack with real-time updates via Socket.io, user authentication, social interactions, and responsive design, backed by scalable REST APIs on MongoDB and a dynamic React frontend with live data synchronization.
-            </Typography>
-          </CardBody>
-        </div>
-
-        <div
-          onClick={() => window.open("https://github.com/sivasanjeevs/Spotify_Clone_Frontend", "_blank")}
-          className="relative mt-6 w-full rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900/80 via-neutral-900/60 to-neutral-800/80 p-6 text-white shadow-[0_0_40px_rgba(24,24,27,0.9)] overflow-hidden transform transition-transform duration-300 ease-in-out hover:-translate-y-1 hover:shadow-[0_0_45px_rgba(34,211,238,0.6)] cursor-pointer"
-        >
-          <img
-            src={spotifyImg}
-            alt="Spotify Clone"
-            className="w-full h-40 object-cover rounded-2xl mb-4"
-          />
-          <CardBody className="p-0">
-            <Typography variant="h5" color="white" className="mb-4">
-              Spotify Clone
-            </Typography>
-            <Typography>
-              A Spotify clone using the MERN stack, replicating core features like music streaming, playlist management, and user authentication, closely mimicking the main functionalities and experience of Spotify’s platform.
-            </Typography>
-          </CardBody>
-        </div>
-      </motion.div>
-      <div className="mt-12 flex justify-center">
-        <Button
-          onClick={() => window.open("https://github.com/sivasanjeevs", "_blank")}
-          className="bg-transparent border border-cyan-400 text-cyan-300 px-6 py-2 rounded-full hover:bg-cyan-500 hover:text-black transition-colors"
-        >
-          More +
-        </Button>
+          <button
+            onClick={() => window.open("https://github.com/sivasanjeevs", "_blank")}
+            className="rounded-full border border-apple-border px-8 py-3 text-sm font-medium text-apple-text transition-all hover:border-white/20 hover:bg-apple-surface active:scale-[0.98]"
+          >
+            View all on GitHub
+          </button>
+        </motion.div>
       </div>
-    </div>
+    </section>
   );
 };
 

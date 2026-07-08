@@ -1,68 +1,61 @@
-import aboutImg from "../assets/rb.png";
-import { ABOUT_TEXT } from "../constants";
+import aboutImg from "../assets/WhatsApp Image 2026-07-04 at 7.21.07 PM.jpeg";
 import { motion } from "framer-motion";
+import SectionHeader from "./SectionHeader";
 
+const ABOUT_PARAGRAPHS = [
+  <>
+    Hi, I'm <span className="font-medium text-apple-text">Sivasanjeev</span>, a Theoretical Computer Science student at PSG College of Technology. I'm passionate about building clean, user-focused digital experiences that bridge complex algorithms with practical full-stack web development.
+  </>,
+  "I recently completed a two-month summer internship as an AI Engineer at Ashtayah Labs, where I focused on developing intelligent invoice processing systems and automation tools. Prior to that, I spent six months as an R&D Intern at GOAT Robotics, contributing to robotics map editing tools, visualization dashboards, and multi-agent pathfinding systems for coordinated robot fleets.",
+  "Outside of software engineering, I have a strong interest in visual design. I frequently create logos, posters, and event branding for college initiatives, focusing on functional aesthetics. I also enjoy singing and drawing, which help me maintain a balanced and creative perspective in my technical work.",
+];
 
 const About = () => {
   return (
-    <div className="border-b border-neutral-800 pb-40">
-        <motion.h1 
-        whileInView={{opacity: 1, y:0}}
-        initial={{opacity:0, y:-100}}
-        transition={{duration:1.5}}
-        className="my-20 text-center text-4xl">About<span className="text-neutral-500"> me!</span></motion.h1>
-        <div className="flex flex-wrap">
-            <motion.div 
-            whileInView={{opacity: 1, x: -50}}
-            initial={{ opacity: 0, x: -100}}
-            transition={{duration: 1}}
-            className="hidden mx-0 lg:flex lg:w-1/2 items-center justify-start">
-               <div className="flex items-center">
-                    <img  className="" src={aboutImg} alt="about" />
-                </div>
-            </motion.div>
-            <div className="w-full lg:w-1/2 flex justify-center lg:justify-start">
-              <div className="max-w-xl px-4">
-                <motion.p 
-                  whileInView={{opacity: 1, x: 0}}
-                  initial={{opacity:0, x:100}}
-                  transition={{duration:1}}
-                  className="my-2 py-2 text-sm md:text-base"
-                >
-                  Hi, I’m <span className="font-semibold">Sivasanjeev</span>, a Theoretical Computer Science student at PSG College of Technology, interested in designing and building clear, user‑focused digital experiences. I enjoy working at the intersection of algorithms and full‑stack web development, using solid theoretical foundations to solve practical problems.
-                </motion.p>
+    <section className="section-padding border-t border-apple-border">
+      <div className="section-container">
+        <SectionHeader
+          eyebrow="About"
+          title="Building with purpose."
+          subtitle="Algorithms, full-stack development, and thoughtful design — combined into work that feels simple and intentional."
+          align="left"
+        />
 
-                <motion.p 
-                  whileInView={{opacity: 1, x: 0}}
-                  initial={{opacity:0, x:100}}
-                  transition={{duration:1}}
-                  className="my-2 py-2 text-sm md:text-base text-neutral-300"
-                >
-                  I completed a Research &amp; Development internship at Goat Robotics, where I contributed to tools for robotics map editing, visualization, and performance analysis, and worked with multi‑agent path finding and navigation concepts for coordinated robot fleets.
-                </motion.p>
-
-                <motion.p 
-                  whileInView={{opacity: 1, x: 0}}
-                  initial={{opacity:0, x:100}}
-                  transition={{duration:1}}
-                  className="my-2 py-2 text-sm md:text-base text-neutral-300"
-                >
-                  Outside of academics and development, I spend time on visual design, including logos, posters, and event branding for college initiatives, with an emphasis on clean, functional visuals.
-                </motion.p>
-
-                <motion.p 
-                  whileInView={{opacity: 1, x: 0}}
-                  initial={{opacity:0, x:100}}
-                  transition={{duration:1}}
-                  className="my-2 py-2 text-sm md:text-base text-neutral-300"
-                >
-                  I also pursue creative interests like singing and drawing, which help me bring a more balanced and thoughtful perspective to the work I do.
-                </motion.p>
-              </div>
+        <div className="grid items-center gap-16 lg:grid-cols-2">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, margin: "-80px" }}
+            transition={{ duration: 0.8 }}
+            className="order-2 flex justify-center lg:order-1"
+          >
+            <div className="about-blob-wrap">
+              <div className="about-blob-glow" />
+              <img
+                src={aboutImg}
+                alt="Sivasanjeev"
+                className="about-blob-photo"
+              />
             </div>
-        </div>
+          </motion.div>
 
-    </div>
+          <div className="order-1 space-y-6 lg:order-2">
+            {ABOUT_PARAGRAPHS.map((text, i) => (
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-60px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="text-base leading-relaxed text-apple-muted md:text-lg"
+              >
+                {text}
+              </motion.p>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
   );
 };
 

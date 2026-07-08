@@ -47,8 +47,8 @@ const parl = () => {
                 <img ref={img} className='image' src={bg} alt=''/>
             
                <div ref={text1} className='absolute flex flex-col items-center justify-center px-4'>
-                    <h1  className='text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[96px] leading-tight text-center'>
-                        <span className="font-thin tracking-tight">Code. Design. Create.</span>
+                    <h1 className='text-3xl sm:text-5xl md:text-6xl lg:text-[80px] xl:text-[96px] leading-tight text-center text-apple-text'>
+                        <span className="font-thin tracking-tight font-apple">Code. Design. Create.</span>
                     </h1>
                </div>
             </div>

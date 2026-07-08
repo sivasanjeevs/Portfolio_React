@@ -1,65 +1,101 @@
 import { motion } from "framer-motion";
+import SectionHeader from "./SectionHeader";
 
-const descriptionVariants = {
-  rest: { opacity: 0, maxHeight: 0, y: -8, transition: { duration: 0.3 } },
-  hover: { opacity: 1, maxHeight: 400, y: 0, transition: { duration: 0.35 } },
+const EXPERIENCES = [
+  {
+    title: "Ashtayah Labs",
+    role: "AI Engineering Intern",
+    period: "May 2026 – July 2026",
+    summary: "Worked as an AI Engineer Intern on intelligent invoice processing, GST reconciliation, and document automation using AI and cloud technologies.",
+    bullets: [
+      "Built an intelligent invoice processing and GST reconciliation platform using Node.js, React, Firebase, Gmail OAuth, and Google Gemini AI for automated invoice extraction and ITC validation.",
+      "Developed a GST reconciliation engine with exact, fuzzy, and historical matching algorithms, along with a real-time dashboard for reconciliation insights and vendor communication."
+    ],
+  },
+  {
+    title: "GOAT Robotics",
+    role: "R&D Intern",
+    period: "May 2025 – December 2025",
+    summary:
+      "Worked as a R&D intern on multi-agent path finding (MAPF), robotics toolchains, and navigation for coordinated robot fleets.",
+    bullets: [
+      "Built the GT‑Studio robotics toolchain (PGM map editor, 3D polygon editor, and Grafana dashboard) to support fleet‑level mapping and analytics.",
+      "Implemented a LaCAM2‑based MAPF engine in C++ and contributed to navigation and localization experiments using the Stanley Controller and Cartographer.",
+    ],
+  },
+];
+
+const ExperienceCard = ({ title, role, period, summary, bullets }) => {
+  const hasDescription = summary || bullets.length > 0;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6 }}
+      className="apple-card group p-8 md:p-10 cursor-default"
+    >
+      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <h3 className="text-xl font-semibold text-apple-text md:text-2xl transition-colors group-hover:text-apple-blue">
+            {title}
+          </h3>
+          {role && (
+            <p className="mt-1 text-base text-apple-muted">{role}</p>
+          )}
+        </div>
+        <p className="text-sm font-medium text-apple-muted sm:text-right">
+          {period}
+        </p>
+      </div>
+
+      {hasDescription && (
+        <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-hover:mt-6 group-hover:pt-6 border-t border-transparent group-hover:border-apple-border">
+          <div className="overflow-hidden">
+            {summary && (
+              <p className="text-base leading-relaxed text-apple-muted mb-4">
+                {summary}
+              </p>
+            )}
+            {bullets.length > 0 && (
+              <ul className="space-y-3">
+                {bullets.map((bullet) => (
+                  <li
+                    key={bullet}
+                    className="flex gap-3 text-base leading-relaxed text-apple-muted"
+                  >
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-apple-blue" />
+                    {bullet}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </div>
+        </div>
+      )}
+    </motion.div>
+  );
 };
 
 const Experience = () => {
   return (
-    <div className="border-b border-neutral-800 pb-40">
-      <motion.h1
-        whileInView={{ opacity: 1, y: 0 }}
-        initial={{ opacity: 0, y: -100 }}
-        transition={{ duration: 1.5 }}
-        className="my-20 text-center text-4xl text-white"
-      >
-        Experience
-      </motion.h1>
+    <section className="section-padding border-t border-apple-border">
+      <div className="section-container">
+        <SectionHeader
+          eyebrow="Experience"
+          title="Where I've worked."
+          subtitle="Hands-on experience in robotics, algorithms, and building tools that scale."
+        />
 
-      <div className="flex justify-center">
-        <motion.div
-            whileInView={{ opacity: 1, x: 0 }}
-            initial={{ opacity: 0, x: -80 }}
-            transition={{ duration: 1 }}
-            className="w-full max-w-2xl rounded-2xl border border-neutral-800 bg-gradient-to-br from-neutral-900/80 via-neutral-900/60 to-neutral-800/80 p-6 shadow-[0_0_40px_rgba(24,24,27,0.9)] cursor-pointer"
-            initial="rest"
-            whileHover="hover"
-            animate="rest"
-          >
-            <div>
-              <h2 className="text-2xl font-semibold text-cyan-300">
-                GOAT Robotics - R&D Intern
-              </h2>
-              <p className="mt-1 text-sm text-neutral-400">
-                May 2025 – December 2025
-              </p>
-            </div>
-
-            <motion.div
-              variants={descriptionVariants}
-              className="overflow-hidden"
-            >
-              <p className="mt-4 text-sm md:text-base text-neutral-300 leading-relaxed">
-                Worked as a R&amp;D intern on{" "}
-                <span className="text-cyan-300">multi-agent path finding (MAPF)</span>, 
-                robotics toolchains, and navigation for coordinated robot fleets.
-              </p>
-
-              <ul className="mt-4 list-disc list-outside space-y-2 pl-5 text-sm md:text-base text-neutral-300 leading-relaxed pb-2">
-                <li>
-                  Built the GT‑Studio robotics toolchain (PGM map editor, 3D polygon editor, and Grafana dashboard) to support fleet‑level mapping and analytics.
-                </li>
-                <li>
-                  Implemented a LaCAM2‑based MAPF engine in C++ and contributed to navigation and localization experiments using the Stanley Controller and Cartographer.
-                </li>
-              </ul>
-            </motion.div>
-        </motion.div>
+        <div className="mx-auto flex max-w-3xl flex-col gap-6">
+          {EXPERIENCES.map((exp) => (
+            <ExperienceCard key={exp.title} {...exp} />
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 };
 
 export default Experience;
-

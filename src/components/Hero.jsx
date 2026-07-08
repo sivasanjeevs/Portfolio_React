@@ -4,62 +4,59 @@ import { motion } from "framer-motion";
 const Hero = () => {
   const handleScroll = (sectionId) => {
     const el = document.getElementById(sectionId);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
-  return ( 
-    <section className="min-h-screen flex flex-col items-center justify-center text-center">
-      <motion.h1 
-        whileInView={{opacity: 1, y: 0}}
-        initial={{ opacity: 0, y: -40}}
-        transition={{duration: 1}}
-        className="mb-4 text-4xl font-extralight tracking-tight lg:text-6xl"
+  return (
+    <section className="relative flex min-h-screen flex-col items-center justify-center px-6 pt-24 text-center md:px-12">
+      <motion.h1
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.9, delay: 0.1 }}
+        className="max-w-4xl text-5xl font-semibold tracking-tight text-apple-text md:text-7xl lg:text-8xl"
       >
-        Sivasanjeev S
+        Sivasanjeev S.
       </motion.h1>
 
-      <motion.span 
-        whileInView={{opacity: 1, y: 0}}
-        initial={{ opacity: 0, y: -20}}
-        transition={{duration: 1}}
-        className="mb-6 bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl lg:text-3xl tracking-tight text-transparent"
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.25 }}
+        className="mt-6 text-xl font-medium text-apple-muted md:text-2xl lg:text-3xl"
       >
-        Student at PSG
-      </motion.span>
+        Student at PSG College of Technology.
+      </motion.p>
 
       <motion.p
-        whileInView={{opacity: 1, y: 0}}
-        initial={{ opacity: 0, y: 20}}
-        transition={{duration: 1}}
-        className="max-w-2xl px-4 mb-10 text-sm md:text-base font-light text-neutral-300"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="mt-8 max-w-xl text-base leading-relaxed text-apple-muted md:text-lg"
       >
         {HERO_CONTENT}
       </motion.p>
 
       <motion.div
-        whileInView={{opacity: 1, y: 0}}
-        initial={{ opacity: 0, y: 30}}
-        transition={{duration: 1.1}}
-        className="flex flex-wrap items-center justify-center gap-4"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.55 }}
+        className="mt-12 flex flex-wrap items-center justify-center gap-6"
       >
-        {[
-          { id: "about", label: "About" },
-          { id: "experience", label: "Experience" },
-          { id: "blog", label: "Blog" },
-          { id: "projects", label: "Projects" },
-          // { id: "designs", label: "Designs" },
-        ].map(({ id, label }) => (
-          <button
-            key={id}
-            onClick={() => handleScroll(id)}
-            className="px-6 py-2 rounded-full border border-cyan-400/60 bg-gradient-to-r from-cyan-500/10 via-purple-500/10 to-pink-500/10 text-sm md:text-base font-medium text-neutral-100 hover:bg-cyan-500/20 hover:border-cyan-400 hover:-translate-y-0.5 transition-all duration-200 shadow-[0_0_20px_rgba(56,189,248,0.15)]"
-          >
-            {label}
-          </button>
-        ))}
+        <button
+          onClick={() => handleScroll("projects")}
+          className="btn-glass"
+        >
+          View Projects
+        </button>
+        <button
+          onClick={() => handleScroll("about")}
+          className="text-sm font-medium text-apple-blue transition-opacity hover:opacity-70"
+        >
+          Learn more →
+        </button>
       </motion.div>
+
+
     </section>
   );
 };
