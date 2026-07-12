@@ -15,25 +15,25 @@ const Hero = () => {
         transition={{ duration: 0.9, delay: 0.1 }}
         className="max-w-4xl text-5xl font-semibold tracking-tight text-apple-text md:text-7xl lg:text-8xl"
       >
-        Sivasanjeev S.
+        Sivasanjeev
       </motion.h1>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.25 }}
-        className="mt-6 text-xl font-medium text-apple-muted md:text-2xl lg:text-3xl"
+        className="mt-6 max-w-3xl text-xl font-medium leading-relaxed text-apple-muted md:text-2xl lg:text-3xl"
       >
-        Student at PSG College of Technology.
+        Software developer focused on AI & backend systems.
       </motion.p>
 
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.4 }}
-        className="mt-8 max-w-xl text-base leading-relaxed text-apple-muted md:text-lg"
+        className="mt-6 max-w-xl text-base leading-relaxed text-apple-muted md:text-lg"
       >
-        {HERO_CONTENT}
+        Bridging algorithms with practical engineering to build simple, intentional tools.
       </motion.p>
 
       <motion.div

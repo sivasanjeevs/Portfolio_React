@@ -34,9 +34,12 @@ const ExperienceCard = ({ title, role, period, summary, bullets }) => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.6 }}
-      className="apple-card group p-8 md:p-10 cursor-default"
+      className="apple-card group p-8 md:p-10 cursor-default relative overflow-hidden"
     >
-      <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+      {/* Subtle glow behind the card */}
+      <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
+
+      <div className="relative z-10 flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
         <div>
           <h3 className="text-xl font-semibold text-apple-text md:text-2xl transition-colors group-hover:text-apple-blue">
             {title}
@@ -51,7 +54,7 @@ const ExperienceCard = ({ title, role, period, summary, bullets }) => {
       </div>
 
       {hasDescription && (
-        <div className="grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-hover:mt-6 group-hover:pt-6 border-t border-transparent group-hover:border-apple-border">
+        <div className="relative z-10 grid grid-rows-[0fr] opacity-0 transition-all duration-500 ease-in-out group-hover:grid-rows-[1fr] group-hover:opacity-100 group-hover:mt-6 group-hover:pt-6 border-t border-transparent group-hover:border-apple-border">
           <div className="overflow-hidden">
             {summary && (
               <p className="text-base leading-relaxed text-apple-muted mb-4">

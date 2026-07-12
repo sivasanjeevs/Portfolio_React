@@ -1,4 +1,5 @@
-import mapfImage from "../assets/blog1.png";
+import mapfImage from "../assets/mapf-blog.jpg";
+import implicitDehazingImage from "../assets/implicit-dehazing.jpg";
 
 export const BLOG_POSTS = [
   {
@@ -7,14 +8,14 @@ export const BLOG_POSTS = [
     subtitle: "",
     tags: "Research · Autonomous Vehicles · Computer Vision",
     excerpt: "",
-    coverImage: null,
+    coverImage: implicitDehazingImage,
   },
   {
     slug: "mapf-multi-agent-path-finding",
     title: "MAPF – Multi-Agent Path Finding",
     subtitle:
       "Navigating the Grid: How Multi-Agent Path Finding (MAPF) Powers Warehouse Robots",
-    tags: "MAPF – Multi-Agent Path Finding · Robotics · Algorithms",
+    tags: "Multi-Agent Path Finding · Robotics · Algorithms",
     excerpt:
       "A walkthrough of how hundreds of warehouse robots share the same grid without colliding, and the algorithms that make it possible in real time.",
     coverImage: mapfImage,

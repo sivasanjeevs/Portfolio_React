@@ -1,9 +1,11 @@
 import { Link, useParams, Navigate } from "react-router-dom";
 import { getBlogPost } from "../constants/blogs";
 import MapfArticleContent from "../components/blog/MapfArticleContent";
+import ImplicitDehazingArticleContent from "../components/blog/ImplicitDehazingArticleContent";
 
 const ARTICLE_CONTENT = {
   "mapf-multi-agent-path-finding": MapfArticleContent,
+  "implicit-dehazing-feature-space": ImplicitDehazingArticleContent,
 };
 
 const BlogArticlePage = () => {

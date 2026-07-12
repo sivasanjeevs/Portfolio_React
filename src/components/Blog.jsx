@@ -24,22 +24,25 @@ const Blog = () => {
             >
               <Link
                 to={`/blog/${post.slug}`}
-                className="apple-card group flex flex-col gap-6 p-6 sm:flex-row sm:items-center md:p-8"
+                className={`apple-card group flex flex-col gap-6 p-6 sm:items-center md:p-8 relative overflow-hidden ${i % 2 !== 0 ? 'sm:flex-row-reverse' : 'sm:flex-row'}`}
               >
+                {/* Subtle glow behind the card */}
+                <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
+
                 {post.coverImage ? (
                   <img
                     src={post.coverImage}
                     alt={post.title}
-                    className="h-36 w-full shrink-0 rounded-2xl object-cover sm:h-28 sm:w-44"
+                    className="relative z-10 h-48 w-full shrink-0 rounded-2xl object-cover sm:h-40 sm:w-64"
                   />
                 ) : (
-                  <div className="flex h-36 w-full shrink-0 items-center justify-center rounded-2xl bg-apple-surface2 sm:h-28 sm:w-44">
+                  <div className="relative z-10 flex h-48 w-full shrink-0 items-center justify-center rounded-2xl bg-apple-surface2 sm:h-40 sm:w-64">
                     <span className="text-xs font-semibold uppercase tracking-widest text-apple-muted">
                       Research
                     </span>
                   </div>
                 )}
-                <div className="flex-1">
+                <div className="relative z-10 flex-1">
                   <p className="text-xs font-medium uppercase tracking-widest text-apple-muted">
                     {post.tags || "Article"}
                   </p>

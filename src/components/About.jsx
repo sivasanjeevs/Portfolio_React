@@ -4,10 +4,10 @@ import SectionHeader from "./SectionHeader";
 
 const ABOUT_PARAGRAPHS = [
   <>
-    Hi, I'm <span className="font-medium text-apple-text">Sivasanjeev</span>, a Theoretical Computer Science student at PSG College of Technology. I'm passionate about building clean, user-focused digital experiences that bridge complex algorithms with practical full-stack web development.
+    I'm <span className="font-medium text-apple-text">Sivasanjeev</span>, a Theoretical Computer Science student at PSG College of Technology. I focus on building efficient, user-centric software.
   </>,
-  "I recently completed a two-month summer internship as an AI Engineer at Ashtayah Labs, where I focused on developing intelligent invoice processing systems and automation tools. Prior to that, I spent six months as an R&D Intern at GOAT Robotics, contributing to robotics map editing tools, visualization dashboards, and multi-agent pathfinding systems for coordinated robot fleets.",
-  "Outside of software engineering, I have a strong interest in visual design. I frequently create logos, posters, and event branding for college initiatives, focusing on functional aesthetics. I also enjoy singing and drawing, which help me maintain a balanced and creative perspective in my technical work.",
+  "Previously, I worked as an AI Engineer intern at Ashtayah Labs developing document automation tools, and as an R&D intern at GOAT Robotics building multi-agent pathfinding systems for robot fleets.",
+  "Beyond engineering, I enjoy visual design creating logos and branding. Off-screen, I spend my downtime drawing and singing.",
 ];
 
 const About = () => {
@@ -16,8 +16,8 @@ const About = () => {
       <div className="section-container">
         <SectionHeader
           eyebrow="About"
-          title="Building with purpose."
-          subtitle="Algorithms, full-stack development, and thoughtful design — combined into work that feels simple and intentional."
+          title="Keep it simple."
+          subtitle="Algorithms, Software development, and thoughtful design."
           align="left"
         />
 

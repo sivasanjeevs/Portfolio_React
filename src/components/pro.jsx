@@ -1,47 +1,33 @@
 import { motion } from "framer-motion";
-import remoteDesktopImg from "../assets/remote desktop.png";
-import ai2048Img from "../assets/2048.png";
-import healthcareImg from "../assets/drug.png";
-import roboImg from "../assets/robo.png";
-import xcloneImg from "../assets/xclone.png";
-import spotifyImg from "../assets/spotifyclone.png";
+import remoteDesktopImg from "../assets/remote-desktop-thumb.jpg";
+import implicitDehazeImg from "../assets/implicit-dehaze-thumb.png";
+import threadnetImg from "../assets/threadnet-thumb.jpg";
+import coresImg from "../assets/cores-thumb.jpg";
+import roboImg from "../assets/roboroute-thumb-new.jpg";
+import xcloneImg from "../assets/xclone-thumb.jpg";
 import SectionHeader from "./SectionHeader";
 
 const PROJECTS = [
   {
-    title: "Remote Desktop",
-    description:
-      "A remote desktop application built with Python socket programming and Tkinter, allowing users to access and control a remote system effortlessly.",
-    image: remoteDesktopImg,
-    url: "https://github.com/sivasanjeevs/remote-Desktop",
-  },
-  {
     title: "Implicit Dehazing in Feature Space",
     description:
       "A research project proposing a novel single-stage semantic segmentation architecture that performs implicit dehazing in latent feature space, enabling faster and more accurate autonomous vehicle perception under foggy conditions.",
-    image: remoteDesktopImg,
+    image: implicitDehazeImg,
     url: "https://github.com/sivasanjeevs/Implicit-Dehazing-in-Feature-Space",
-  },
-  {
-    title: "CORES",
-    description:
-      "Anomaly detection framework leveraging recursive kernel backtracking to extract extreme convolutional responses and synthetic noise calibration to evaluate deep neural network safety across image datasets via AUROC and FPR96 metrics.",
-    image: healthcareImg,
-    url: "https://github.com/sivasanjeevs/CORES",
   },
   {
     title: "ThreadNet",
     description:
       "A multi-threaded, load-balanced real-time chat platform featuring a C++ TCP backend, a Node.js WebSocket bridge, and web user/admin interfaces. It uses a custom load balancer to distribute users across multiple chat servers via a round-robin approach based on server load.",
-    image: xcloneImg,
+    image: threadnetImg,
     url: "https://github.com/sivasanjeevs/ThreadNet",
   },
   {
-    title: "HealthCare Diagnostics",
+    title: "CORES",
     description:
-      "Healthcare project using Python for disease prediction via decision trees, image segmentation with k-means, and drug efficiency prediction.",
-    image: healthcareImg,
-    url: "https://github.com/sivasanjeevs/HealthCare-Diagnostics-and-Drug-discovery",
+      "Anomaly detection framework leveraging recursive kernel backtracking to extract extreme convolutional responses and synthetic noise calibration to evaluate deep neural network safety across image datasets via AUROC and FPR96 metrics.",
+    image: coresImg,
+    url: "https://github.com/sivasanjeevs/CORES",
   },
   {
     title: "RoboRoute",
@@ -51,18 +37,18 @@ const PROJECTS = [
     url: "https://github.com/sivasanjeevs/RoboRoute",
   },
   {
+    title: "Remote Desktop",
+    description:
+      "A remote desktop application built with Python socket programming and Tkinter, allowing users to access and control a remote system effortlessly.",
+    image: remoteDesktopImg,
+    url: "https://github.com/sivasanjeevs/remote-Desktop",
+  },
+  {
     title: "X Clone",
     description:
       "Feature-rich Twitter clone using the MERN stack with real-time updates via Socket.io, authentication, and responsive design.",
     image: xcloneImg,
     url: "https://github.com/sivasanjeevs/X_Clone",
-  },
-  {
-    title: "Spotify Clone",
-    description:
-      "Spotify clone using the MERN stack with music streaming, playlist management, and user authentication.",
-    image: spotifyImg,
-    url: "https://github.com/sivasanjeevs/Spotify_Clone_Frontend",
   },
 ];
 
@@ -85,16 +71,19 @@ const Pro = () => {
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, delay: (i % 3) * 0.1 }}
               onClick={() => window.open(project.url, "_blank")}
-              className="apple-card group cursor-pointer overflow-hidden"
+              className="apple-card group cursor-pointer overflow-hidden relative"
             >
-              <div className="overflow-hidden">
+              {/* Subtle glow behind the card */}
+              <div className="absolute -top-24 -right-24 h-48 w-48 rounded-full bg-blue-500/20 blur-3xl pointer-events-none" />
+
+              <div className="overflow-hidden relative z-10">
                 <img
                   src={project.image}
                   alt={project.title}
                   className="h-48 w-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="p-6">
+              <div className="p-6 relative z-10">
                 <h3 className="text-lg font-semibold text-apple-text">
                   {project.title}
                 </h3>
