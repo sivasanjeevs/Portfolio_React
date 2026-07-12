@@ -7,6 +7,9 @@ const ABOUT_PARAGRAPHS = [
     I'm <span className="font-medium text-apple-text">Sivasanjeev</span>, a Theoretical Computer Science student at PSG College of Technology. I focus on building efficient, user-centric software.
   </>,
   "Previously, I worked as an AI Engineer intern at Ashtayah Labs developing document automation tools, and as an R&D intern at GOAT Robotics building multi-agent pathfinding systems for robot fleets.",
+  <>
+    I also have a strong interest in research. My work on &quot;Implicit Dehazing in Feature Space: A Single-Stage Architecture for Autonomous Vehicle Perception&quot; was published as a chapter in the book <span className="italic text-apple-text">Generative AI and Cloud Ecosystems for Mobility Application</span>.
+  </>,
   "Beyond engineering, I enjoy visual design creating logos and branding. Off-screen, I spend my downtime drawing and singing.",
 ];
 

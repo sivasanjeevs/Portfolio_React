@@ -34,7 +34,7 @@
   }
 
   .section-title {
-    @apply text-4xl font-semibold tracking-tight text-apple-text md:text-5xl lg:text-6xl;
+    @apply text-4xl font-thin tracking-tight font-apple text-apple-text md:text-5xl lg:text-6xl;
   }
 
   .section-subtitle {
