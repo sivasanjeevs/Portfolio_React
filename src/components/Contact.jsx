@@ -1,9 +1,48 @@
+import { useState } from "react";
 import { CONTACT } from "../constants";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { motion } from "framer-motion";
 import SectionHeader from "./SectionHeader";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [status, setStatus] = useState("");
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setStatus("loading");
+
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${CONTACT.email}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "New submission from your Portfolio!",
+          _template: "table",
+          _captcha: "false"
+        }),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", message: "" });
+      } else {
+        setStatus("error");
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus("error");
+    }
+  };
+
   return (
     <section className="section-padding border-t border-apple-border">
       <div className="section-container">
@@ -26,19 +65,15 @@ const Contact = () => {
             <div className="absolute -bottom-24 -left-24 h-48 w-48 rounded-full bg-purple-500/20 blur-3xl pointer-events-none" />
             
             <form 
-              action={`https://formsubmit.co/${CONTACT.email}`} 
-              method="POST"
+              onSubmit={handleSubmit}
               className="relative z-10 w-full space-y-5"
             >
-              {/* Disable captcha for smoother UX */}
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_subject" value="New submission from your Portfolio!" />
-              
               <div className="flex flex-col gap-5 sm:flex-row">
                 <input
                   type="text"
                   name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   placeholder="Your Name"
                   required
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-apple-text outline-none transition-all placeholder:text-apple-muted focus:border-white/30 focus:bg-white/10 focus:ring-4 focus:ring-white/5"
@@ -46,6 +81,8 @@ const Contact = () => {
                 <input
                   type="email"
                   name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   placeholder="Your Email"
                   required
                   className="w-full rounded-xl border border-white/10 bg-white/5 px-4 py-3.5 text-sm text-apple-text outline-none transition-all placeholder:text-apple-muted focus:border-white/30 focus:bg-white/10 focus:ring-4 focus:ring-white/5"
@@ -53,6 +90,8 @@ const Contact = () => {
               </div>
               <textarea
                 name="message"
+                value={formData.message}
+                onChange={handleChange}
                 rows="4"
                 placeholder="Your Message"
                 required
@@ -60,10 +99,22 @@ const Contact = () => {
               />
               <button
                 type="submit"
-                className="btn-glass w-full py-4 text-base tracking-wide"
+                disabled={status === 'loading'}
+                className="btn-glass w-full py-4 text-base tracking-wide disabled:opacity-70 disabled:cursor-not-allowed"
               >
-                Send Message
+                {status === 'loading' ? 'Sending...' : 'Send Message'}
               </button>
+
+              {status === 'success' && (
+                <p className="text-green-400 text-sm text-center mt-2">
+                  Message sent successfully!
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-red-400 text-sm text-center mt-2">
+                  Oops! Something went wrong. Please try again.
+                </p>
+              )}
             </form>
           </div>
           
